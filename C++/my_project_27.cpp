@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
-void insertionSort(int arr[], int n) {
-    for(int i = 1; i < n; i++) {
-        int key = arr[i];
-        int j = i - 1;
-        while(j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
 int main() {
-    int arr[] = {9, 7, 5, 3, 1};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    insertionSort(arr, n);
-    for(int i = 0; i < n; i++)
-        cout << arr[i] << " ";
+    double a, b;
+    char op;
+    cout << "Enter first number: ";
+    cin >> a;
+    cout << "Enter operator (+, -, *, /): ";
+    cin >> op;
+    cout << "Enter second number: ";
+    cin >> b;
+    switch(op) {
+        case '+': cout << "Result: " << a + b; break;
+        case '-': cout << "Result: " << a - b; break;
+        case '*': cout << "Result: " << a * b; break;
+        case '/': cout << (b != 0 ? a / b : 0); break;
+        default: cout << "Invalid operator!";
+    }
     return 0;
 }
