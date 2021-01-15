@@ -1,20 +1,18 @@
 #include <iostream>
 using namespace std;
-void insertionSort(int arr[], int n) {
-    for(int i = 1; i < n; i++) {
-        int key = arr[i];
-        int j = i - 1;
-        while(j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
+void selectionSort(int arr[], int n) {
+    for(int i = 0; i < n - 1; i++) {
+        int min_idx = i;
+        for(int j = i + 1; j < n; j++)
+            if(arr[j] < arr[min_idx])
+                min_idx = j;
+        swap(arr[min_idx], arr[i]);
     }
 }
 int main() {
-    int arr[] = {9, 7, 5, 3, 1};
+    int arr[] = {10, 20, 5, 7, 15};
     int n = sizeof(arr)/sizeof(arr[0]);
-    insertionSort(arr, n);
+    selectionSort(arr, n);
     for(int i = 0; i < n; i++)
         cout << arr[i] << " ";
     return 0;
