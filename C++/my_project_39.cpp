@@ -1,16 +1,20 @@
 #include <iostream>
 using namespace std;
-void bubbleSort(int arr[], int n) {
-    for(int i = 0; i < n - 1; i++)
-        for(int j = 0; j < n - i - 1; j++)
-            if(arr[j] > arr[j + 1])
-                swap(arr[j], arr[j + 1]);
-}
 int main() {
-    int arr[] = {5, 3, 8, 6, 2, 7};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    bubbleSort(arr, n);
-    for(int i = 0; i < n; i++)
-        cout << arr[i] << " ";
+    double a, b;
+    char op;
+    cout << "Enter first number: ";
+    cin >> a;
+    cout << "Enter operator (+, -, *, /): ";
+    cin >> op;
+    cout << "Enter second number: ";
+    cin >> b;
+    switch(op) {
+        case '+': cout << "Result: " << a + b; break;
+        case '-': cout << "Result: " << a - b; break;
+        case '*': cout << "Result: " << a * b; break;
+        case '/': cout << (b != 0 ? a / b : 0); break;
+        default: cout << "Invalid operator!";
+    }
     return 0;
 }
