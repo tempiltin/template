@@ -20,7 +20,7 @@ def get_random_dates(year, month, count=10):
 
 def run_git_commands(date):
     os.system("git add .")
-    commit_date = date.strftime("%Y-%m-%dT01:08:90")
+    commit_date = date.strftime("%Y-%m-%dT01:08:")
     os.system(f'git commit --date="{commit_date}" -m "Old commit"')
     os.system("git push")
 
